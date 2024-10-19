@@ -1,0 +1,180 @@
+/* General Styles */
+.login-page {
+  display: flex;
+  height: 100vh;
+  font-family: 'Arial', sans-serif;
+  background: #eee; /* Light gray background for the entire page */
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+/* Left Side */
+.left-side {
+  flex: 1;
+  background: 
+    url('/src/assets/firstpagejpg/Asset 2@4x.png') no-repeat center center, /* Second background image */
+    url('/src/assets/firstpagejpg/Asset 16@4x.png') no-repeat center center, /* First background image */
+    #3a2e85; /* Purple background */
+  background-size: cover, cover; /* Ensure the images cover the entire container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.left-side .graphic {
+  max-width: 90%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+/* Right Side */
+.right-side {
+  flex: 1;
+  background: url('src/assets/firstpagejpg/Asset 13@4x.png') no-repeat center center; /* Set the background image */
+  background-size: cover; /* Ensure it covers the entire container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* Login Container */
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background: transparent; /* Background set to transparent */
+  box-shadow: none; /* No shadow */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Logo Section */
+.logo-section {
+  width: 80%;
+  height: 200px; /* Increased height for more space around the logo */
+  background: url('src/assets/firstpagejpg/Asset 11@4x.png') no-repeat center center; /* Logo background */
+  background-size: 80%; /* Slightly larger background size relative to the container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo-section img {
+  width: 150px; /* Adjust the logo size if needed */
+  height: auto;
+}
+
+/* Form Section */
+.form-section {
+  width: 100%;
+  text-align: center;
+}
+
+.form-section h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.form-section input,
+.form-section button {
+  width: calc(100% - 20px); /* Adjust width considering padding */
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc; /* Consistent styling */
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Submit Button */
+.form-section button {
+  background-color: #ff4500; /* Bright orange color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-section button:hover {
+  background-color: #e43e00; /* Darker shade on hover */
+}
+
+/* Error Message */
+.error-message {
+  color: red;
+  text-align: center;
+  margin-top: 15px;
+}
+
+/* Signup Text */
+.signup-text {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.signup-text a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
+
+/* Contact and Legal Info */
+.contact-info,
+.legal-links {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.legal-links a {
+  color: #777;
+  text-decoration: none;
+}
+
+.legal-links a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .login-page {
+    flex-direction: column;
+  }
+
+  .left-side {
+    display: none; /* Hide the left side on small screens */
+  }
+
+  .right-side {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .login-container {
+    width: 100%;
+    max-width: 100%;
+    box-shadow: none;
+    padding: 10px;
+  }
+
+  .form-section h2 {
+    font-size: 20px;
+  }
+
+  .signup-text {
+    font-size: 12px;
+  }
+
+  button[type="submit"] {
+    font-size: 14px;
+  }
+}
