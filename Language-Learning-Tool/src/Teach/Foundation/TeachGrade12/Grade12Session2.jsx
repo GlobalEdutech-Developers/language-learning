@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../GradePage.css'; // Import the CSS file for styling
+ import "../../../Task/TaskGrade/TaskGradepage.css";
+// Import the CSS file for styling
 
 // Images
 import classroomTeachingImg from '../../../assets/page4Images/Asset 135@4x.png';
@@ -18,7 +19,7 @@ const Grade12Session1 = () => {
 
   return (
     <div className="grade-container">
-      <div className="main-content">
+      <div className="main-content1">
         <div className="header1">
           <h2>Grade 12 | Foundation | Session 1: Meet the Children</h2>
         </div>
@@ -29,7 +30,7 @@ const Grade12Session1 = () => {
               <img src={classroomTeachingImg} alt="Classroom Teaching" />
               <div className="session-dropdown">
                 <label htmlFor="sessionSelect">Select a Session:</label>
-                <select id="sessionSelect" className="select-class" onChange={handleSessionChange}>
+                <select id="sessionSelect" onChange={handleSessionChange}>
                   <option value="">--Select Session--</option>
                   <option value="/session1">Prefix 1</option>
                   <option value="/session2">Suffix 1</option>

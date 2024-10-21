@@ -526,7 +526,7 @@ const Grade1Page = () => {
               {/* Add your class options here */}
             </select>
             <div className="popup-buttons">
-              <button className="go-button" onClick={handleGoButtonClick}>
+              <button className="go-button" onClick={handleCbtClick}>
                 GO
               </button>
               <button className="cancel-button" onClick={closeSecondPopup}>

@@ -10,7 +10,10 @@ export default [
     ignores: ['dist'],
     languageOptions: {
       ecmaVersion: 2020,
-      globals: globals.browser,
+      globals: {
+        ...globals.browser,  // Include browser globals like window, document
+        MyGlobalVar: 'readonly' // Example of adding custom globals
+      },
       parserOptions: {
         ecmaVersion: 'latest',
         ecmaFeatures: { jsx: true },
@@ -33,8 +36,9 @@ export default [
         'warn',
         { allowConstantExport: true },
       ],
+      'no-undef': 'error', // Ensure no-undef is enabled (default)
       'no-unused-vars': 'off', // Disable the no-unused-vars rule
-      'react/no-unescaped-entities': 'off', // Disable the no space entities rule
+      'react/no-unescaped-entities': 'off', // Disable no space entities rule
     },
   },
 ]
