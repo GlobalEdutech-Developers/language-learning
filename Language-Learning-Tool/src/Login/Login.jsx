@@ -1,4 +1,3 @@
-// Login.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css'; // Ensure the CSS path is correct
@@ -9,6 +8,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [formErrors, setFormErrors] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
+  const [showPassword, setShowPassword] = useState(false); // New state to toggle password visibility
 
   // Validate form inputs
   const validate = () => {
@@ -57,24 +57,29 @@ const Login = () => {
       setErrorMessage('Please correct the errors above');
     }
   };
-  
+
   // Handle navigation to the registration page
   const handleRegisterRedirect = () => {
     navigate('/register');
   };
-  
+
+  // Toggle password visibility
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevState) => !prevState);
+  };
+
   return (
     <div className="login-page">
       <div className="left-side">
-        <img src="src/assets/firstpagejpg/Asset 1@4x.png" alt="Educational Graphic" className="graphic"/>
+        <img src="src/assets/firstpagejpg/Asset 1@4x.png" alt="Educational Graphic" className="graphic" />
       </div>
       <div className="right-side">
         <div className="login-container">
           <div className="logo-section">
-            <img src="src/assets/firstpagejpg/Asset 10@4x.png" alt="Logo" className="logo"/>
+            <img src="src/assets/firstpagejpg/Asset 10@4x.png" alt="Logo" className="logo" />
           </div>
           <div className="form-section">
-            <h2>Enter Your Login Credentials</h2>
+            <h2>Your Login Credentials</h2>
             <form onSubmit={handleLogin}>
               <div className="form-group">
                 <label htmlFor="email">Email</label>
@@ -91,14 +96,22 @@ const Login = () => {
 
               <div className="form-group">
                 <label htmlFor="password">Password</label>
-                <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  autoComplete="current-password"
-                />
+                <div className="password-container">
+                  <input
+                    type={showPassword ? 'text' : 'password'} // Toggle between 'text' and 'password' type
+                    id="password"
+                    name="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    autoComplete="current-password"
+                  />
+                  <span
+                    className="toggle-password"
+                    onClick={togglePasswordVisibility}
+                  >
+                    <i className={`fas ${showPassword ? 'fa-eye-slash' : 'fa-eye'}`}></i>
+                  </span>
+                </div>
                 {formErrors.password && <p className="error">{formErrors.password}</p>}
               </div>
 

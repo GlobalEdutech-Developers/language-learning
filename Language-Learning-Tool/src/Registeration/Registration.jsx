@@ -1,9 +1,11 @@
-// Register.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Registration.css'; // Ensure the CSS path is correct
+import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Import eye icons from react-icons
+
 const Register = () => {
   const navigate = useNavigate();
+  
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -14,6 +16,8 @@ const Register = () => {
 
   const [formErrors, setFormErrors] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
+  const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false); // State to toggle confirm password visibility
 
   // Handle form input changes
   const handleInputChange = (e) => {
@@ -22,6 +26,16 @@ const Register = () => {
       ...formData,
       [name]: value,
     });
+  };
+
+  // Toggle password visibility
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  // Toggle confirm password visibility
+  const toggleConfirmPasswordVisibility = () => {
+    setShowConfirmPassword(!showConfirmPassword);
   };
 
   // Validate form inputs
@@ -47,7 +61,6 @@ const Register = () => {
   // Handle form submission
   const handleRegister = async (e) => {
     e.preventDefault();
-
     const errors = validate();
     setFormErrors(errors);
 
@@ -91,8 +104,9 @@ const Register = () => {
       </div>
       <div className="right-side">
         <div className="register-container">
+          {/* Uncomment the logo section if needed */}
           <div className="logo-section">
-            <img src="src/assets/firstpagejpg/Asset 10@4x.png" alt="Logo" className="logo" />
+            <img src="src/assets/neo-web-logo-2-0000.jpg" alt="Logo" className="logo" />
           </div>
           <div className="form-section">
             <h2>Create Your Account</h2>
@@ -136,29 +150,39 @@ const Register = () => {
                 {formErrors.email && <p className="error">{formErrors.email}</p>}
               </div>
 
-              <div className="form-group">
+              <div className="form-group password-group">
                 <label htmlFor="password">Password</label>
-                <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  value={formData.password}
-                  onChange={handleInputChange}
-                  autoComplete="new-password"
-                />
+                <div className="password-wrapper">
+                  <input
+                    type={showPassword ? 'text' : 'password'} // Toggle password visibility
+                    id="password"
+                    name="password"
+                    value={formData.password}
+                    onChange={handleInputChange}
+                    autoComplete="new-password"
+                  />
+                  <span onClick={togglePasswordVisibility} className="password-toggle-icon">
+                    {showPassword ? <FaEyeSlash /> : <FaEye />}
+                  </span>
+                </div>
                 {formErrors.password && <p className="error">{formErrors.password}</p>}
               </div>
 
-              <div className="form-group">
+              <div className="form-group confirmpassword-group">
                 <label htmlFor="confirmPassword">Confirm Password</label>
-                <input
-                  type="password"
-                  id="confirmPassword"
-                  name="confirmPassword"
-                  value={formData.confirmPassword}
-                  onChange={handleInputChange}
-                  autoComplete="new-password"
-                />
+                <div className="confirmpassword-wrapper">
+                  <input
+                    type={showConfirmPassword ? 'text' : 'password'} // Toggle confirm password visibility
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    value={formData.confirmPassword}
+                    onChange={handleInputChange}
+                    autoComplete="new-confirmPassword"
+                  />
+                  <span onClick={toggleConfirmPasswordVisibility} className="confirmpassword-toggle-icon">
+                    {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
+                  </span>
+                </div>
                 {formErrors.confirmPassword && <p className="error">{formErrors.confirmPassword}</p>}
               </div>
 

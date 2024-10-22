@@ -1,4 +1,4 @@
-/* General Styles */
+/* General page styles */
 .login-page {
   display: flex;
   height: 100vh;
@@ -8,7 +8,7 @@
   justify-content: stretch;
 }
 
-/* Left Side */
+/* Left-side graphic section */
 .left-side {
   flex: 1;
   background: 
@@ -43,8 +43,8 @@
 
 /* Login Container */
 .login-container {
-  width: 100%;
-  max-width: 400px;
+  width: 400px;
+  max-width: 800px;
   padding: 20px;
   background: transparent; /* Background set to transparent */
   box-shadow: none; /* No shadow */
@@ -65,116 +65,107 @@
   margin-bottom: 20px;
 }
 
+.logo {
+  width: 100px;
+}
+
 .logo-section img {
   width: 150px; /* Adjust the logo size if needed */
   height: auto;
 }
-
-/* Form Section */
-.form-section {
-  width: 100%;
-  text-align: center;
-}
-
+/* Form section styles */
 .form-section h2 {
+  text-align: center;
   margin-bottom: 20px;
   font-size: 24px;
   color: #333;
 }
 
-.form-section input,
-.form-section button {
-  width: calc(100% - 20px); /* Adjust width considering padding */
+/* Form group styling */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 16px;
+  color: #333;
+  margin-top: 20px;
+}
+
+/* Input fields styling */
+.form-group input {
+  width: 100%;
   padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc; /* Consistent styling */
-  border-radius: 4px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
   box-sizing: border-box;
 }
 
-/* Submit Button */
-.form-section button {
-  background-color: #ff4500; /* Bright orange color */
-  color: white;
-  border: none;
-  border-radius: 5px;
+.form-group input:focus {
+  border-color: #4b4b93;
+  outline: none;
+}
+
+/* Password container */
+.password-container {
+  position: relative;
+}
+
+/* Password input with space for icon */
+.password-container input {
+  padding-right: 40px;
+}
+
+/* Toggle password icon */
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
   cursor: pointer;
+  color: #4b4b93;
 }
 
-.form-section button:hover {
-  background-color: #e43e00; /* Darker shade on hover */
+.toggle-password i {
+  font-size: 18px;
 }
 
-/* Error Message */
+/* Error message styling */
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
 .error-message {
   color: red;
-  text-align: center;
-  margin-top: 15px;
-}
-
-/* Signup Text */
-.signup-text {
-  text-align: center;
-  margin-top: 15px;
-  font-size: 14px;
-}
-
-.signup-text a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.signup-text a:hover {
-  text-decoration: underline;
-}
-
-/* Contact and Legal Info */
-.contact-info,
-.legal-links {
   text-align: center;
   margin-top: 10px;
 }
 
-.legal-links a {
-  color: #777;
-  text-decoration: none;
+/* Button styling */
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #4b4b93;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.legal-links a:hover {
-  text-decoration: underline;
+button[type="submit"]:hover {
+  background-color: #3a3a7a;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .login-page {
-    flex-direction: column;
-  }
-
-  .left-side {
-    display: none; /* Hide the left side on small screens */
-  }
-
-  .right-side {
-    width: 100%;
-    padding: 20px;
-  }
-
-  .login-container {
-    width: 100%;
-    max-width: 100%;
-    box-shadow: none;
-    padding: 10px;
-  }
-
-  .form-section h2 {
-    font-size: 20px;
-  }
-
-  .signup-text {
-    font-size: 12px;
-  }
-
-  button[type="submit"] {
-    font-size: 14px;
-  }
+/* Signup text styling */
+.signup-text {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #333;
 }
