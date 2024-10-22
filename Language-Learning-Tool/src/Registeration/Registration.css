@@ -33,12 +33,13 @@
   border-radius: 8px;
   padding: 20px;
 }
+
 .logo-section {
  
-    width: 80%;
-    height: 200px; /* Increased height for more space around the logo */
+    width: 70%;
+    height: 150px; /* Increased height for more space around the logo */
     background: url('src/assets/firstpagejpg/Asset 11@4x.png') no-repeat center center; /* Logo background */
-    background-size: 80%; /* Slightly larger background size relative to the container */
+    background-size: 70%; /* Slightly larger background size relative to the container */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,7 +48,7 @@
 
 
 .logo {
-  width: 100px; /* Adjust size */
+  width: 0px; /* Adjust size */
   height: auto; /* Maintain aspect ratio */
 }
 

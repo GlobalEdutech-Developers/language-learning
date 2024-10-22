@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, BrowserRouter as Router, Routes, Route } from 'react-router-dom';// Adjust based on the task folder location
+  // Adjust based on the assign folder location
+
 import './Assign.css';
 
 // Function to format date to 'DD MMM YYYY' (e.g., '12 Sep 2024')
@@ -80,6 +82,18 @@ const Assign = () => {
         )}
       </div>
     </div>
+  );
+};
+
+const App = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/create-task" element={<CreateTaskPage />} />
+        <Route path="/assign" element={<AssignPage />} /> {/* Add this route */}
+        {/* Other routes */}
+      </Routes>
+    </Router>
   );
 };
 

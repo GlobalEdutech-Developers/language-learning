@@ -106,7 +106,7 @@ const Register = () => {
         <div className="register-container">
           {/* Uncomment the logo section if needed */}
           <div className="logo-section">
-            <img src="src/assets/neo-web-logo-2-0000.jpg" alt="Logo" className="logo" />
+            <img src="src/assets/NEOD-LOGO-2.gif" alt="Logo" className="logo" />
           </div>
           <div className="form-section">
             <h2>Create Your Account</h2>

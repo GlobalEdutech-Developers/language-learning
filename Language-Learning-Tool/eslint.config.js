@@ -40,5 +40,21 @@ export default [
       'no-unused-vars': 'off', // Disable the no-unused-vars rule
       'react/no-unescaped-entities': 'off', // Disable no space entities rule
     },
+    
   },
+
+  {
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint",
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+    ],
+    "rules": {
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": ["error"]
+    }
+  }
 ]
